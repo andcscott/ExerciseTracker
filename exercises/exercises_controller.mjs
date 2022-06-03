@@ -31,8 +31,7 @@ app.get(
 app.get(
   "/exercises/:_id",
   asyncHandler(async (req, res) => {
-    const exerciseId = req.params._id;
-    const exercise = await exercises.findExerciseById(exerciseId);
+    const exercise = await exercises.findExerciseById(req.params._id);
     if (exercise !== null) {
       res.status(200).json(exercise);
     } else {
