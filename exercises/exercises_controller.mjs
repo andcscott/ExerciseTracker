@@ -19,6 +19,9 @@ function isDateValid(date) {
   return format.test(date);
 }
 
+/**
+ * Route handler for retrieving all exercises
+ */
 app.get(
   "/exercises",
   asyncHandler(async (req, res) => {
@@ -28,6 +31,9 @@ app.get(
   })
 );
 
+/**
+ * Route handler for retrieving an exercise by ID
+ */
 app.get(
   "/exercises/:_id",
   asyncHandler(async (req, res) => {
@@ -40,20 +46,28 @@ app.get(
   })
 );
 
+/**
+ * Route handler for creating new exercises
+ */
 app.post(
   "/exercises",
   asyncHandler(async (req, res) => {
     let isValid;
     if (req.body.name === "" || typeof req.body.name !== "string") {
       isValid = false;
-    } else if (typeof req.body.reps !== "number" || req.body.reps < 1) {
+      //console.log("name");
+    } else if (req.body.reps < 1) {
       isValid = false;
-    } else if (typeof req.body.weight !== "number" || req.body.weight < 1) {
+      //console.log("reps");
+    } else if (req.body.weight < 1) {
       isValid = false;
+      //console.log("weight");
     } else if (req.body.unit !== "lbs" && req.body.unit !== "kgs") {
       isValid = false;
+      //console.log("unit");
     } else if (!isDateValid(req.body.date)) {
       isValid = false;
+      //console.log("date");
     } else {
       isValid = true;
     }
@@ -72,6 +86,9 @@ app.post(
   })
 );
 
+/**
+ * Route handler for updating an exercise
+ */
 app.put(
   "/exercises/:_id",
   asyncHandler(async (req, res) => {
@@ -109,6 +126,21 @@ app.put(
       }
     } else {
       res.status(400).json({ Error: "Invalid request" });
+    }
+  })
+);
+
+/**
+ * Route handler for deleting an exercise
+ */
+app.delete(
+  "/exercises/:_id",
+  asyncHandler(async (req, res) => {
+    const resultVal = await exercises.deleteExercise({ _id: req.params._id });
+    if (resultVal > 0) {
+      res.status(204).json({ Success: "Deleted" });
+    } else {
+      res.status(404).json({ Error: "Not found" });
     }
   })
 );
