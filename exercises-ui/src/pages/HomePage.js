@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 import "../App.css";
 
-function HomePage() {
+function HomePage({ setExerciseToEdit }) {
   const [exercises, setExercises] = useState([]);
+
+  const history = useHistory();
 
   const onDelete = async (_id) => {
     const response = await fetch(`/exercises/${_id}`, { method: "DELETE" });
@@ -19,8 +21,8 @@ function HomePage() {
   };
 
   const onEdit = async (exerciseToEdit) => {
-    //setExerciseToEdit(exerciseToEdit);
-    //history.push("/edit");
+    setExerciseToEdit(exerciseToEdit);
+    history.push("/edit");
   };
 
   const loadExercises = async () => {
@@ -41,7 +43,7 @@ function HomePage() {
         onDelete={onDelete}
         onEdit={onEdit}
       ></ExerciseList>
-      <div className="App-link">
+      <div>
         <Link to="/create">Create</Link>
       </div>
     </div>
