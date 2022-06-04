@@ -40,19 +40,42 @@ const createExercise = async (name, reps, weight, unit, date) => {
   return exercise.save();
 };
 
+/**
+ * Get all exercises
+ */
 const findExercises = async (filter) => {
   const query = Exercise.find(filter);
   return query.exec();
 };
 
+/**
+ * Get the exercise associated with a given ID
+ */
 const findExerciseById = async (_id) => {
   const query = Exercise.findById(_id);
   return query.exec();
 };
 
+/**
+ * Update an exercise
+ */
 const updateExercise = async (_id, update) => {
   const result = await Exercise.updateOne(_id, update);
   return result.modifiedCount;
 };
 
-export { createExercise, findExerciseById, findExercises, updateExercise };
+/**
+ * Delete an exercise
+ */
+const deleteExercise = async (_id) => {
+  const result = await Exercise.deleteOne(_id);
+  return result.deletedCount;
+};
+
+export {
+  createExercise,
+  findExerciseById,
+  findExercises,
+  updateExercise,
+  deleteExercise,
+};
