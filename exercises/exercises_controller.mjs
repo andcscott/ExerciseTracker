@@ -96,9 +96,9 @@ app.put(
     let resultVal;
     if (req.body.name === "" || typeof req.body.name !== "string") {
       isValid = false;
-    } else if (typeof req.body.reps !== "number" || req.body.reps < 1) {
+    } else if (req.body.reps < 1) {
       isValid = false;
-    } else if (typeof req.body.weight !== "number" || req.body.weight < 1) {
+    } else if (req.body.weight < 1) {
       isValid = false;
     } else if (req.body.unit !== "lbs" && req.body.unit !== "kgs") {
       isValid = false;
