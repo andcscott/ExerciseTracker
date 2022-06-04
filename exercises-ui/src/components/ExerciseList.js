@@ -17,7 +17,12 @@ function ExerciseList({ exercises, onDelete, onEdit }) {
       </thead>
       <tbody>
         {exercises.map((exercise, i) => (
-          <Exercise exercise={exercise} onDelete={onDelete} key={i} />
+          <Exercise
+            exercise={exercise}
+            onDelete={onDelete}
+            onEdit={onEdit}
+            key={i}
+          />
         ))}
       </tbody>
     </table>
