@@ -38,7 +38,7 @@ function HomePage({ setExerciseToEdit }) {
 
   return (
     <div className="App">
-      <h2>List of Exercises</h2>
+      <h2>Exercises</h2>
       <ExerciseList
         exercises={exercises}
         onDelete={onDelete}
