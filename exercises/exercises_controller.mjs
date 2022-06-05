@@ -55,19 +55,18 @@ app.post(
     let isValid;
     if (req.body.name === "" || typeof req.body.name !== "string") {
       isValid = false;
-      //console.log("name");
+    } else if (!Number.isInteger(parseInt(req.body.reps))) {
+      isValid = false;
     } else if (req.body.reps < 1) {
       isValid = false;
-      //console.log("reps");
+    } else if (!Number.isInteger(parseInt(req.body.weight))) {
+      isValid = false;
     } else if (req.body.weight < 1) {
       isValid = false;
-      //console.log("weight");
     } else if (req.body.unit !== "lbs" && req.body.unit !== "kgs") {
       isValid = false;
-      //console.log("unit");
     } else if (!isDateValid(req.body.date)) {
       isValid = false;
-      //console.log("date");
     } else {
       isValid = true;
     }
@@ -96,7 +95,11 @@ app.put(
     let resultVal;
     if (req.body.name === "" || typeof req.body.name !== "string") {
       isValid = false;
+    } else if (!Number.isInteger(parseInt(req.body.reps))) {
+      isValid = false;
     } else if (req.body.reps < 1) {
+      isValid = false;
+    } else if (!Number.isInteger(parseInt(req.body.weight))) {
       isValid = false;
     } else if (req.body.weight < 1) {
       isValid = false;
