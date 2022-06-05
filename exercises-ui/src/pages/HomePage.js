@@ -2,6 +2,7 @@ import ExerciseList from "../components/ExerciseList";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
+import { MdAdd } from "react-icons/md";
 import "../App.css";
 
 function HomePage({ setExerciseToEdit }) {
@@ -44,7 +45,9 @@ function HomePage({ setExerciseToEdit }) {
         onEdit={onEdit}
       ></ExerciseList>
       <div>
-        <Link to="/create">Create</Link>
+        <Link to="/create">
+          <MdAdd className="Add-icon" />
+        </Link>
       </div>
     </div>
   );
