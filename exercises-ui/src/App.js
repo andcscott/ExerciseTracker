@@ -6,6 +6,7 @@ import CreatePage from "./pages/CreatePage";
 import EditPage from "./pages/EditPage";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { MdRunCircle } from "react-icons/md";
 
 function App() {
   const [exerciseToEdit, setExerciseToEdit] = useState();
@@ -14,6 +15,7 @@ function App() {
       <Router>
         <div className="App-header">
           <header>
+            <MdRunCircle className="logo" />
             <h1>Exercise Tracker</h1>
             <p>Create, edit, and delete exercises</p>
           </header>
