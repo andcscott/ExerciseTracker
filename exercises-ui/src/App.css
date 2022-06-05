@@ -1,32 +1,64 @@
 body {
-  font-family: monospace;
-  background-color: #323d43;
-  color: #a7c080;
-  margin: 20px;
-  padding: 20px;
+  font-family: sans-serif;
+  background-color: #313131;
+  color: #ebdbb2;
+  margin: 10px 0px 0px 0px;
+  padding: 10px;
 }
 
 tr th {
+  font: Verdana;
   text-align: center;
-  color: #d8caac;
+  color: #ebdbb2;
   border: 5px solid;
-  border-color: #87c095;
+  border-color: #d79921;
   padding: 5px;
+  background-color: #cc241d;
 }
 
 tr td {
+  font: Verdana;
   text-align: center;
-  color: #89beba;
+  color: #dcdccc;
   border: 1px solid;
+  border-color: #b8bb26;
   padding: 5px;
+  background-color: #b22222;
+}
+
+h1 {
+  color: #ebdbb2;
+  text-shadow: 1px 1px 3px black;
+}
+
+h2 {
+  color: #dcdccc;
+  text-shadow: 1px 1px 2px black;
+}
+
+p {
+  color: #dcdccc;
+}
+
+a {
+  color: #458588;
 }
 
 input {
-  font-family: monospace;
+  font-family: sans-serif;
+  padding: 5px;
+  margin: 0px 0px 25% 0px;
 }
 
 button {
-  font-family: monospace;
+  font-family: sans-serif;
+  padding: 5px;
+  margin: 0px 0px 25% 0px;
+}
+
+select {
+  font-family: sans-serif;
+  padding: 5px;
 }
 
 .App {
@@ -34,16 +66,23 @@ button {
 }
 
 .App-header {
-  background-color: #323d43;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: #d8caac;
 }
 
-a {
-  color: white;
+.Add-icon {
+  color: #5a981a;
+  height: 100px;
+  width: 100px;
+  filter: drop-shadow(1px 1px 1px black);
+}
+
+.logo {
+  color: #1a9897;
+  height: 170px;
+  width: 170px;
+  filter: drop-shadow(1px 1px 1px black);
 }
