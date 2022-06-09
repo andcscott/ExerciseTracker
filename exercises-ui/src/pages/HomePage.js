@@ -45,9 +45,11 @@ function HomePage({ setExerciseToEdit }) {
         onEdit={onEdit}
       ></ExerciseList>
       <div>
-        <Link to="/create">
-          <MdAdd className="Add-icon" />
-        </Link>
+        <button className="Add-icon-button">
+          <Link to="/create">
+            <MdAdd className="Add-icon" />
+          </Link>
+        </button>
       </div>
     </div>
   );
