@@ -37,7 +37,12 @@ function App() {
             <Link to="/create">Create</Link>
           </div>
         </nav>
-        <footer>© 2022 Andrew Scott</footer>
+        <footer>
+          © 2022 Andrew Scott under an{" "}
+          <a href="https://codeberg.org/andcscott/ExerciseTracker/src/branch/main/LICENSE">
+            ISC License
+          </a>
+        </footer>
       </Router>
     </div>
   );
